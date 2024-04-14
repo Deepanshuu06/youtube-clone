@@ -1,7 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
+
 
 const Sidebar = () => {
-  return (
+  const isMenuOpen = useSelector(store => store.app.isMenuOpen)
+  console.log(isMenuOpen );
+
+  return isMenuOpen && (
     <div className="col-span-1 px-2">
       <div className="py-6 px-2 border-b-2 border-black ">
         <ul className="space-y-[5px]">

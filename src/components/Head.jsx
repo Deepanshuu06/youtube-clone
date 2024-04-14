@@ -6,20 +6,28 @@ import {
   userIcon,
   youtubeLogo,
 } from "../constants";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
 
 const Head = () => {
   const [SearchText, SetSearchText] = useState("");
+  const dispatch = useDispatch()
 
   const handleSearchText = (e) => {
     SetSearchText(e.target.value);
   };
-  console.log(SearchText);
+  
+  const toggleMenuHandler = ()=>{
+    dispatch(toggleMenu())
+  }
 
   return (
     <div className="grid grid-flow-col px-5 py-4  m-2 shadow-lg">
       <div className="flex col-span-3 items-center">
-        <img src={hamburgerIcon} alt="menu" className="w-8 h-10 mr-8" />
-        <img src={youtubeLogo} alt="youtube" className="w-fit h-8" />
+        <img src={hamburgerIcon} alt="menu" className="w-8 h-10 mr-8 cursor-pointer" 
+        onClick={()=> toggleMenuHandler()}
+        />
+        <img src={youtubeLogo} alt="youtube" className="w-fit h-8 cursor-pointer " />
       </div>
       <div className="flex col-span-8 text-center items-center ">
         <input
