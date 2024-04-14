@@ -1,9 +1,29 @@
-import React from 'react'
+import React from "react";
+import { youtubeLogo } from "./constants";
+
+import Body from "./components/Body";
+import Head from "./components/Head";
 
 function App() {
   return (
-    <div>App</div>
-  )
+    <>
+      <Head />
+      <Body />
+    </>
+
+    /*
+    head
+    body
+     sidebar
+        menulinks
+     mainContainer
+      buttons list 
+      video Container   
+          video card
+
+
+    */
+  );
 }
 
-export default App
+export default App;
