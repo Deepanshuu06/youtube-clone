@@ -3,13 +3,20 @@ import { youtubeLogo } from "./constants";
 
 import Body from "./components/Body";
 import Head from "./components/Head";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 function App() {
   return (
-    <>
-      <Head />
-      <Body />
-    </>
+    
+      <Provider store={store}>
+        <div>
+        <Head />
+        <Body />
+
+        </div>
+    
+      </Provider>
 
     /*
     head
