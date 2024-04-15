@@ -16,7 +16,7 @@ const Head = () => {
   const handleSearchText = (e) => {
     SetSearchText(e.target.value);
   };
-  
+
   const toggleMenuHandler = ()=>{
     dispatch(toggleMenu())
   }
@@ -37,7 +37,7 @@ const Head = () => {
           value={SearchText}
           onChange={handleSearchText}
         />
-        <button className="px-4 py-2 rounded-e-3xl border-emerald-600 border-2 bg-gray-400">
+        <button className="px-4 py-2 rounded-e-3xl border-emerald-600 border-2 bg-gray-200">
           <img className="h-6" src={searchIcon} alt="" />
         </button>
        <button className="ml-5"> <img src={micIcon} alt="mic" className="w- h-8" /></button>
