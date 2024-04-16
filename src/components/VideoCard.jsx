@@ -5,7 +5,6 @@ const VideoCard = ({video}) => {
   const {snippet , statistics} = video;
   const {channelTitle , title  } = snippet
 
-  console.log(video);
   return (
     <div className=' w-80 cursor-pointer'>
       <img  className='rounded-xl' src={video.snippet.thumbnails.standard.url} alt="" />

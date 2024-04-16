@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import ShortSideBar from "./ShortSideBar";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
-  console.log(isMenuOpen);
 
   if (!isMenuOpen) {
     return null;
@@ -14,13 +14,13 @@ const Sidebar = () => {
     <div className="min-w-64">
       <div className=" pb-6 px-2 border-b-2 border-black ">
         <ul className="space-y-[5px]">
-          <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
-            <span className="mr-2 material-symbols-outlined">home</span>Home
-          </li>
+          <Link to={"/"}>
+            <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
+              <span className="mr-2 material-symbols-outlined">home</span>Home
+            </li>
+          </Link>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
-          <span class="material-symbols-outlined mr-2">
-library_books
-</span>
+            <span class="material-symbols-outlined mr-2">library_books</span>
             Shorts
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
@@ -40,10 +40,9 @@ library_books
             <span class=" mr-2 material-symbols-outlined">history</span> History
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
-          <span class="material-symbols-outlined mr-2">
-playlist_play
-</span>
-            Playlist</li>
+            <span class="material-symbols-outlined mr-2">playlist_play</span>
+            Playlist
+          </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
             <span class="material-symbols-outlined mr-2">animated_images</span>
             Your Videos
