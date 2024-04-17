@@ -3,8 +3,8 @@ import Button from './Button'
 
 const ButtonList = () => {
   return (
-    <div className='sticky top-24 bg-white z-[-1]'>
-      <div className='flex space-x-2 mb-6 flex-wrap '>
+    <div className='sticky bg-white '>
+      <div className='flex space-x-2 mb-6 overflow-hidden '>
         <Button name="All"/>
         <Button name="Gaming"/>
         <Button name="Music"/>
@@ -12,11 +12,10 @@ const ButtonList = () => {
         <Button name="Inventions"/>
         <Button name="All"/>
         <Button name="Gaming"/>
-        <Button name="Music"/>
+
+
         <Button name="Music"/>
         <Button name="Inventions"/>
-        <Button name="All"/>
-        <Button name="Gaming"/>
       </div>
     </div>
   )
