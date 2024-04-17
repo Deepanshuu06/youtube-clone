@@ -14,17 +14,16 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <Body />,
     errorElement: <ErrorPage />,
-    children:[
+    children: [
       {
-        path:"/",
-        element:<MainContainer/>
+        path: "/",
+        element: <MainContainer />,
       },
       {
-        path:"/watch",
-        element:<WatchPage/>
+        path: "/watch",
+        element: <WatchPage />,
       },
-
-    ]
+    ],
   },
 ]);
 
