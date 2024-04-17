@@ -24,15 +24,16 @@ const VideoContainer = () => {
       console.error("Error fetching videos:", error.message);
     }
   };
-  // console.log(filteredVideos);
-
+  
   return (
-    <div className="flex flex-wrap gap-8">
-      {filteredVideos.map((video) => (
-        <Link to={"/watch?v="+video.id}>
-          <VideoCard key={video.id} video={video} />
-        </Link>
-      ))}
+    <div className="sticky top-0 h-full overflow-y-auto">
+      <div className="flex flex-wrap gap-8">
+        {filteredVideos.map((video , index) => (
+          <Link key={index} to={"/watch?v="+video.id}>
+            <VideoCard video={video} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

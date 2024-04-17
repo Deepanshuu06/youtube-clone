@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense , lazy} from "react";
 
 import Body from "./components/Body";
 import Head from "./components/Head";
@@ -6,8 +6,10 @@ import { Provider } from "react-redux";
 import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
-import WatchPage from "./components/WatchPage";
+const WatchPage =lazy(()=> import("./components/WatchPage"))
+
 import MainContainer from "./components/MainContainer";
+
 
 const appRouter = createBrowserRouter([
   {
@@ -20,8 +22,10 @@ const appRouter = createBrowserRouter([
         element: <MainContainer />,
       },
       {
+    
         path: "/watch",
-        element: <WatchPage />,
+        element: <Suspense> <WatchPage /> </Suspense>
+       
       },
     ],
   },

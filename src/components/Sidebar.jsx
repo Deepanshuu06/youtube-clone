@@ -11,8 +11,8 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="min-w-64">
-      <div className=" pb-6 px-2 border-b-2 border-black ">
+    <div className="min-w-64 h-screen overflow-y-auto sticky top-50 z-[-1]">
+      <div className="pb-6 px-2 border-b-2 border-black">
         <ul className="space-y-[5px]">
           <Link to={"/"}>
             <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
@@ -20,11 +20,11 @@ const Sidebar = () => {
             </li>
           </Link>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
-            <span class="material-symbols-outlined mr-2">library_books</span>
+            <span className="material-symbols-outlined mr-2">library_books</span>
             Shorts
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
-            <span class="material-symbols-outlined mr-2">subscriptions</span>
+            <span className="material-symbols-outlined mr-2">subscriptions</span>
             Subscription
           </li>
         </ul>
@@ -33,26 +33,27 @@ const Sidebar = () => {
         <h1 className="font-bold pb-5 text-xl">You</h1>
         <ul className="space-y-0.5">
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
-            <span class="material-symbols-outlined mr-2">account_circle</span>
+            <span className="material-symbols-outlined mr-2">account_circle</span>
             Your Channel
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
-            <span class=" mr-2 material-symbols-outlined">history</span> History
+            <span className=" mr-2 material-symbols-outlined">history</span> History
           </li>
+
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
-            <span class="material-symbols-outlined mr-2">playlist_play</span>
+            <span className="material-symbols-outlined mr-2">playlist_play</span>
             Playlist
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
-            <span class="material-symbols-outlined mr-2">animated_images</span>
+            <span className="material-symbols-outlined mr-2">animated_images</span>
             Your Videos
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex ">
-            <span class="material-symbols-outlined mr-2">schedule</span>
+            <span className="material-symbols-outlined mr-2">schedule</span>
             Watch Later
           </li>
           <li className="rounded-xl py-3 px-3 hover:bg-gray-200 flex">
-            <span class="material-symbols-outlined mr-2">thumb_up</span>
+            <span className="material-symbols-outlined mr-2">thumb_up</span>
             Liked videos
           </li>
         </ul>

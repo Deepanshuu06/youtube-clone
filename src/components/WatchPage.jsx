@@ -4,6 +4,8 @@ import { closeMenu } from "../utils/appSlice";
 import { GOOGLE_API_KEY } from "../constants";
 import Comments from "./Comments";
 import { userIcon } from "../constants";
+import RecommndedVideoCard from "./RecommndedVideoCard";
+
 
 const WatchPage = () => {
   // const location = useLocation();
@@ -24,10 +26,8 @@ const WatchPage = () => {
     );
     const json = await response.json();
     setCommentsList(json.items);
+
   };
-
-
-  
 
   return (
     <div className="px-10 py-6 flex">
@@ -62,14 +62,13 @@ const WatchPage = () => {
               />
             </div>
           </div>
-
           {CommentsList.map((comment, index) => (
             <Comments key={index} Comments={comment} />
           ))}
         </div>
       </div>
       <div className="ml-10 bg-green-300 w-full">
-        <p>recommended</p>
+        <RecommndedVideoCard/>
       </div>
     </div>
   );
