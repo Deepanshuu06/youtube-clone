@@ -24,7 +24,14 @@ const Head = () => {
   };
 
   useEffect(() => {
-    fetchSearchSuggestion();
+    const timer = setTimeout(() => {
+      fetchSearchSuggestion();
+      
+      console.log(`api call ${searchText}`);
+    }, 400);
+    return ()=>{
+      clearTimeout(timer)
+    }
   }, [searchText]);
 
   const fetchSearchSuggestion = async () => {
