@@ -41,6 +41,7 @@ const Comments = ({ Comments }) => {
   }
 
   const timeAgoString = timeAgo(updatedAt);
+  console.log(Comments);
 
   return (
     <div>

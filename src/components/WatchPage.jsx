@@ -32,9 +32,12 @@ const WatchPage = () => {
   return (
     <div className="px-10 py-6 flex">
       <div>
+        <div className="bg-red-400">
+
+       
         <iframe
           width="900"
-          height="500"
+          height="520"
           src={
             "https://www.youtube.com/embed/" +
             searchParams.get("v") +
@@ -45,6 +48,7 @@ const WatchPage = () => {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
+         </div>
         <div className="mt-10 w-full">
           <div>
             <div className="flex text-2xl gap-24 py-4">

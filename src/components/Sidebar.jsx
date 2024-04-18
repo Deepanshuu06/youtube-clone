@@ -53,7 +53,7 @@ const Sidebar = () => {
             Watch Later
           </li>
           <li className="rounded-xl py-3 px-3 cursor-pointer hover:bg-gray-200 flex">
-            <span class="material-symbols-outlined mr-2">thumb_up</span>
+            <span className="material-symbols-outlined mr-2">thumb_up</span>
             Liked videos
           </li>
         </ul>
