@@ -4,8 +4,7 @@ import { closeMenu } from "../utils/appSlice";
 import { GOOGLE_API_KEY } from "../constants";
 import Comments from "./Comments";
 import { userIcon } from "../constants";
-import RecommndedVideoCard from "./RecommndedVideoCard";
-
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   // const location = useLocation();
@@ -26,15 +25,11 @@ const WatchPage = () => {
     );
     const json = await response.json();
     setCommentsList(json.items);
-
   };
 
   return (
-    <div className="px-10 py-6 flex">
-      <div>
-        <div className="bg-red-400">
-
-       
+    <div className="px-10 py-6 ">
+      <div className=" flex w-full">
         <iframe
           width="900"
           height="520"
@@ -44,35 +39,37 @@ const WatchPage = () => {
             "?autoplay=1"
           }
           title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; autopla; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
-         </div>
-        <div className="mt-10 w-full">
-          <div>
-            <div className="flex text-2xl gap-24 py-4">
-              <h2>Total Comments</h2>
-              <h4>sort</h4>
-            </div>
-            <div className="flex gap-5 py-10">
-              <img src={userIcon} alt="user icon" className="w-10 h-10" />
-              <input
-                className="w-full outline-none border-b-2 border-black"
-                placeholder="Add Comments"
-                type="text"
-                name=""
-                id=""
-              />
-            </div>
+
+          <LiveChat />
+
+      </div>
+
+      <div className="mt-10 w-[56.5rem] bg-yellow-200">
+        <div>
+          <div className="flex text-2xl gap-24 py-4">
+            <h2>Total Comments</h2>
+            <h4>sort</h4>
           </div>
+          <div className="flex gap-5 py-10">
+            <img src={userIcon} alt="user icon" className="w-10 h-10" />
+            <input
+              className="w-full outline-none border-b-2 border-black"
+              placeholder="Add Comments"
+              type="text"
+              name=""
+              id=""
+            />
+          </div>
+        </div>
+        <div>
           {CommentsList.map((comment, index) => (
             <Comments key={index} Comments={comment} />
           ))}
         </div>
-      </div>
-      <div className="ml-10 bg-green-300 w-full">
-        <RecommndedVideoCard/>
       </div>
     </div>
   );
