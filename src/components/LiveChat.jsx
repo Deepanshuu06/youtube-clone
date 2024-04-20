@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LiveChatMessage from "./LiveChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addmessage } from "../utils/chatSlice";
@@ -8,34 +8,61 @@ import { generateLongRandomMessage, generateRandomName } from "../utils/helper";
 const LiveChat = () => {
   const dispatch = useDispatch();
   const chatmessages = useSelector((store) => store.chat.messages);
+  const [livemessage, setlivemessage] = useState("");
 
-  console.log(chatmessages);
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("api called");
       dispatch(
         addmessage({
           name: generateRandomName(),
           message: generateLongRandomMessage(),
         })
       );
-    }, 200);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
-    
-
-    <div className="w-96 border-2 border-black overflow-scroll max-h-[32.5rem] ml-10 flex-col-reverse flex">
-      <div className="pl-2 flex flex-col-reverse">
-        {chatmessages.map((c) => ( // Reverse the order of messages
-          <LiveChatMessage username={c.name} message={c.message} />
-          ))}
+      <div>
+        <div className="w-96 border-2 border-black overflow-scroll scroll-smooth min-h-[28.5rem] max-h-[28.5rem] ml-10 flex-col-reverse flex">
+          <div className="pl-2 flex flex-col-reverse">
+            {chatmessages.map(
+              (
+                c // Reverse the order of messages
+              ) => (
+                <LiveChatMessage username={c.name} message={c.message} />
+              )
+            )}
+          </div>
+        </div>
+        <form
+          action="submit"
+          className="ml-10 mt-4 gap-5 flex"
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(
+              addmessage({
+                name: "deepanshu",
+                message: livemessage,
+              })
+            );
+          }}
+        >
+          <input
+            type="text"
+            placeholder="enter your message"
+            className="px-4 py-2 w-60 border-2 border-black "
+            value={livemessage}
+            onChange={(e) => setlivemessage(e.target.value)}
+          />
+          <button className="border-2 px-5 bg-black text-white py-3 cursor-pointer">
+            send
+          </button>
+        </form>
       </div>
-    </div>
-          </>
+    </>
   );
 };
 

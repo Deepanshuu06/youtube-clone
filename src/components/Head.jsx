@@ -43,7 +43,6 @@ const Head = () => {
   }, [searchText]);
   
   const fetchSearchSuggestion = async () => {
-    console.log(`api call ${searchText}`);
     const response = await fetch(SEARCH_SUGGESTION_API + searchText);
     const json = await response.json();
     setSearchSuggestions(json[1]);
