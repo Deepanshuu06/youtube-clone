@@ -9,7 +9,6 @@ const Sidebar = () => {
   if (!isMenuOpen) {
     return null;
   }
-
   return (
     <div className="min-w-64">
       <div className=" pb-6 px-2 border-b-2 border-black ">

@@ -2,6 +2,10 @@
 
 This is a YouTube clone built with React and Vite bundler. It provides a simple interface to search for and watch YouTube videos.
 
+## Deployment
+
+The project is deployed and can be accessed at [https://customtube.netlify.app/](https://customtube.netlify.app/).
+
 ## Features
 
 - Search for YouTube videos using keywords

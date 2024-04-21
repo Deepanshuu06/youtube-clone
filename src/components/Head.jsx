@@ -35,13 +35,12 @@ const Head = () => {
       } else {
         fetchSearchSuggestion();
       }
-
     }, 200);
     return () => {
       clearTimeout(timer);
     };
   }, [searchText]);
-  
+
   const fetchSearchSuggestion = async () => {
     const response = await fetch(SEARCH_SUGGESTION_API + searchText);
     const json = await response.json();
@@ -51,7 +50,6 @@ const Head = () => {
         [searchText]: json[1],
       })
     );
-
   };
 
   return (

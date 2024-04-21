@@ -44,8 +44,11 @@ const WatchPage = () => {
           allowFullScreen
         ></iframe>
 
-          <LiveChat />
 
+
+        
+
+        <LiveChat />
       </div>
 
       <div className="mt-10 w-[56.5rem] bg-yellow-200">

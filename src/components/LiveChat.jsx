@@ -39,21 +39,26 @@ const LiveChat = () => {
         </div>
         <form
           action="submit"
-          className="ml-10 mt-4 gap-5 flex"
+          className="ml-10 mt-4 gap-5 flex justify-between"
           onSubmit={(e) => {
             e.preventDefault();
-            dispatch(
-              addmessage({
-                name: "deepanshu",
-                message: livemessage,
-              })
-            );
+            if(livemessage.length > 0){
+              dispatch(
+                addmessage({
+                  name: "deepanshu",
+                  message: livemessage,
+                })
+              );
+              setlivemessage("");
+
+            }
+            
           }}
         >
           <input
             type="text"
             placeholder="enter your message"
-            className="px-4 py-2 w-60 border-2 border-black "
+            className="px-4 py-2 w-72 border-2 border-black "
             value={livemessage}
             onChange={(e) => setlivemessage(e.target.value)}
           />
