@@ -51,7 +51,7 @@ const WatchPage = () => {
         <LiveChat />
       </div>
 
-      <div className="mt-10 w-[56.5rem] bg-yellow-200">
+      <div className="mt-10 w-[56.5rem]">
         <div>
           <div className="flex text-2xl gap-24 py-4">
             <h2>Total Comments</h2>
